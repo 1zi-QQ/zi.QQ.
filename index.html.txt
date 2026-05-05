@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>给你的小温暖</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Microsoft YaHei", sans-serif;
+            background: #fdfbf7;
+            color: #4a4a4a;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            line-height: 1.8;
+        }
+
+        .container {
+            max-width: 600px;
+            width: 100%;
+            background: white;
+            padding: 40px 30px;
+            border-radius: 20px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.05);
+            animation: fadeIn 1.2s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .date {
+            font-size: 14px;
+            color: #999;
+            margin-bottom: 20px;
+        }
+
+        .title {
+            font-size: 22px;
+            color: #e08a74;
+            margin-bottom: 25px;
+            font-weight: normal;
+        }
+
+        .content {
+            font-size: 17px;
+            white-space: pre-line;
+            color: #555;
+            min-height: 100px;
+        }
+
+        .footer {
+            margin-top: 40px;
+            font-size: 14px;
+            color: #bbb;
+            text-align: right;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="date" id="todayDate"></div>
+        <h2 class="title">今天想对你说：</h2>
+        <div class="content" id="message">
+你超棒的。
+你值得被好好对待，包括被你自己。
+
+慢慢来，我一直都在。
+        </div>
+        <div class="footer">♥ 一直陪着你的人</div>
+    </div>
+
+    <script>
+        // 自动显示今天日期
+        const dateEl = document.getElementById('todayDate');
+        const now = new Date();
+        const y = now.getFullYear();
+        const m = now.getMonth() + 1;
+        const d = now.getDate();
+        dateEl.innerText = `${y}年${m}月${d}日`;
+    </script>
+</body>
+</html>
